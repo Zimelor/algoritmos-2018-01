@@ -38,7 +38,7 @@ def test(N):
 def test1(N):
     X = np.arange(N)
     Y = [np.average([multp(i) for j in range(10)], axis = 0) for i in range(N)]
-    tAvg = [Y[0]] + [(Y[i][0]/i*i,Y[i][1]/i*i) for i in range(1,N)]
+    tAvg = [Y[0]] + [(Y[i][0]/i*i,Y[i][1]/((i-1)*i)) for i in range(1,N)]
     
     plt.xlabel('N')
     plt.ylabel('Tiempo(ms)')
