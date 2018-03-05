@@ -37,7 +37,7 @@ def test1(N, t):
     #Y =  [np.average([multp(i) for j in range(t)]) for i in range(2,N)]
     #tAvg =  [Y[i-2]/(2*i*i*i - i*i) for i in range(2,N)]
     print('[')
-    for i in range(2,N):
+    for i in range(2,N+1):
         A = np.average([multp(i) for j in range(t)])
         A = A/(2*i*i*i - i*i)
         print(A, ',')
