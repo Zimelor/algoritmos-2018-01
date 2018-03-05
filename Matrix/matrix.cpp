@@ -41,7 +41,7 @@ int main(){
         }
         s /= 10.0;
         s /= (2*i*i*i - i*i);
-        cout << s/10.0 <<  ",\n";
+        cout << s<<  ",\n";
     }
     cout << "]\n";
 }
