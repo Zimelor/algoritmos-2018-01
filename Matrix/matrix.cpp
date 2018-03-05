@@ -19,11 +19,7 @@ double multp(int n){
     for(int k = 0; k < n; k++){
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
-                if(k == 0){
-                    C[i][j] = A[i][k]*B[k][j];
-                }else{
-                    C[i][j] += A[i][k]*B[k][j];
-                }
+                C[i][j] += A[i][k]*B[k][j];
             }
         }
     }
