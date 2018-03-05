@@ -9,8 +9,6 @@ import numpy as np
 import itertools as it
 import matplotlib.pyplot as plt
 
-
-
 '''
 Returns the array after insertion
 and the number of comparations, swaps and other instructions made
@@ -43,7 +41,6 @@ def insertionSort(toSort):
         swaps = swaps + temp[1]
         others = others + temp[2]
     return (comparations, swaps, others)
-
 
 def graph(comparations, swaps, others):
     N = len(comparations)
@@ -87,26 +84,6 @@ def generate(n):
         else:
             c[i] = 0
             i = i + 1
-
-def generateM(n):
-    M = []
-    A = list(range(1,n+1))
-    c = [0]*n
-    M.append(A)
-    i = 0
-    while i < n:
-        if  c[i] < i:
-            if i%2 == 0:
-                A[0],A[i] = A[i], A[0]
-            else:
-                A[c[i]],A[i] = A[i], A[c[i]]
-            M.append(A)
-            c[i] = c[i] + 1
-            i = 0
-        else:
-            c[i] = 0
-            i = i + 1
-    return M
 
 def allPerms(n, perms):
     if(n > 8):
