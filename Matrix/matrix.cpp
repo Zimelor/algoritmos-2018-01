@@ -43,6 +43,8 @@ int main(){
         for(int j = 0; j < 10; j++) {
             s += multp(i);
         }
+        s /= 10.0;
+        s /= (2*i*i*i - i*i);
         cout << s/10.0 <<  ",\n";
     }
     cout << "]\n";

@@ -17,6 +17,21 @@ def multp(N):
     t1 = time.clock()
     return t1 - t0
 
+def multpNoNumpy(N):
+    A = [[1]*N]*N
+    B = [[2]*N]*N
+    C = [[0]*N]*N
+    t0 = time.clock()
+    for i in range(N):
+        for j in  range(N):
+            for k in range(N):
+                mul = A[i,k]*B[k,j];
+                C[i,j] = C[i,j] + mul
+    t1 = time.clock()
+    return t1 - t0
+
+
+
 def test(N):
     X = np.arange(2,N)
     Y = [np.average([multp(i) for j in range(10)], axis = 0) for i in range(2,N)]

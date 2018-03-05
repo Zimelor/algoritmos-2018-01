@@ -30,7 +30,7 @@ public class Matrix {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        long s;
+        double s;
         System.out.println("[");
         for(int i = 2; i <= n; i++){
             s = 0;
@@ -38,7 +38,9 @@ public class Matrix {
                 s += multp(i);
             }
             //System.out.println((s/10.0)/1000.0 + ",");
-            System.out.println(s/1000000000.0 + ",");
+            s /= 1000000000.0;
+            s /= (2*i*i*i - i*i);
+            System.out.println(s + ",");
         }
         System.out.println("]");
     }
