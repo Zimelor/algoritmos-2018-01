@@ -49,7 +49,7 @@ def test1(N, t):
 
 def testNoNumpy(N,t):
     print('[')
-    for i in range(2,N):
+    for i in range(2,N+1):
         A = np.average([multpNoNumpy(i) for j in range(t)])
         A = A/(2*i*i*i - i*i)
         print(A, ',')
