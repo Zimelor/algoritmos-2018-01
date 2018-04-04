@@ -23,7 +23,7 @@ def insert(arr, j):
         others = 1 + (j - 1)
     elif(i == j):
         comparations = 2
-    else:    
+    else:
         comparations = 2*(j - i)
     swaps = j - i
     others = 1 + (j - i)
@@ -85,9 +85,16 @@ def generate(n):
             c[i] = 0
             i = i + 1
 
+def shuffle(A):
+    A = list(A)
+    n = len(A)
+    for i in range(n-1):
+        j = random.randint(i,n-1)
+        A[j],A[i] = A[i], A[j]
+    return A
+
+
 def allPerms(n, perms):
-    if(n > 8):
-        print("Input too big, try a number like 8 or less")
     comparations = []
     swaps = []
     others = []
@@ -97,21 +104,23 @@ def allPerms(n, perms):
         swaps = swaps + [temp[1]]
         others = others + [temp[2]]
     graph(comparations, swaps, others)
-    
-def samplePerms(n, m):
+
+def samplePerms(n, m, rnd):
     comparations = []
     swaps = []
     others = []
     rng = range(n)
     for i in range(m):
-        nxt = np.random.permutation(rng)
+        nxt = rnd(rng)
         temp = insertionSort(nxt)
         comparations = comparations + [temp[0]]
         swaps = swaps + [temp[1]]
         others = others + [temp[2]]
     graph(comparations, swaps, others)
 
+
+n=11
 #print(list(it.permutations(range(5))))
-#allPerms(5,it.permutations(range(5)))
+#allPerms(n,a)
 #allPerms(5,generate(5))
-    
+samplePerms(20, 10000)   
